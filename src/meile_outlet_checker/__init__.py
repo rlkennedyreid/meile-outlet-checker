@@ -97,7 +97,7 @@ def parse_and_notify_pdf(
     counter = 0
     while not replaced:
         counter += 1
-        if counter > 60:
+        if counter > 90:
             std_console.print("Failed to download new file after 60 attempts; exiting.")
             return
         std_console.print("Trying download...")
@@ -149,8 +149,9 @@ def parse_and_notify_pdf(
             for match in matches:
                 console.print(f"    '{match.matched}' with {match.dist} differences")
 
-    output = buffer.getvalue().strip()
     if found_matches:
+        console.print(f"{url}")
+        output = buffer.getvalue().strip()
         std_console.print(output)
 
         if number and not recipients:
@@ -226,7 +227,7 @@ def default(
         )
         return
 
-    every().day.at("09:15", tz="Europe/London").do(
+    every().day.at("09:00", tz="Europe/London").do(
         partial(
             parse_and_notify_pdf,
             number=number,

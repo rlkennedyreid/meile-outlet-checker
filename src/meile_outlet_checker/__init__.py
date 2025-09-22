@@ -98,7 +98,7 @@ def parse_and_notify_pdf(
     while not replaced:
         counter += 1
         if counter > 90:
-            std_console.print("Failed to download new file after 60 attempts; exiting.")
+            std_console.print("Failed to download new file after 90 attempts; exiting.")
             return
         std_console.print("Trying download...")
         replaced, old_file = download_pdf(

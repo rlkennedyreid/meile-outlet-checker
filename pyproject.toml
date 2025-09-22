@@ -7,7 +7,17 @@ authors = [
     { name = "Robin Kennedy-Reid", email = "github@orbit.mozmail.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "appdirs>=1.4.4",
+    "fuzzysearch>=0.8.0",
+    "pydantic>=2.11.9",
+    "pydantic-settings>=2.10.1",
+    "pypdf>=6.0.0",
+    "pytz>=2025.2",
+    "requests>=2.32.5",
+    "schedule>=1.2.2",
+    "typer[all]>=0.19.1",
+]
 
 [project.scripts]
 meile-outlet-checker = "meile_outlet_checker:main"
